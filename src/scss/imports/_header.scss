@@ -1,0 +1,38 @@
+//This is nesting
+
+header {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding-top: 2rem;
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    //last 15 minutes you missed something about mobile 1st design
+    
+    p {
+      display: none;
+      @media (min-width: $break-med) {
+        display: block;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    // Review on Video it chooses the next p after an h1
+    //
+    h1 + p {
+      padding-top: 1rem;
+      border-top: 3px double $dk-yellow;
+    }
+    
+    // Review on Video it chooses the next p after an h1
+    //    
+    p + p {
+      font-size: 1rem;
+      line-height: 1.1;
+      color: $med-gray;
+    }
+  }

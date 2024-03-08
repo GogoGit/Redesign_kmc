@@ -1,9 +1,24 @@
-<nav aria-label="Primary">
+<!-- Templating lanuage is liquid -->
+<!-- <nav aria-label="Primary">
   <ul>
     {% for page in collections.page %}
     <li>
       <a href="{{ page.url }}"> {{ page.data.navTitle }} </a>
     </li>
     {% endfor %}
+  </ul>
+</nav> -->
+
+
+<!-- Use a class Selector!!!! -->
+<nav aria-label="Primary"> <!-- for screen reader -->
+  <a href="#" id="pull"></a>  <!-- This creates a hamburger when the screen is small ... look at css -->
+  <ul>
+    {% for nav in collections.nav %}
+    <!-- If statement using Templating language -->
+    <li class="{% if nav.url == page.url %} active{% endif %}">
+      <a href="{{ nav.url | url }}">{{ nav.data.navTitle }}</a>
+    </li>
+    {%- endfor -%}
   </ul>
 </nav>
